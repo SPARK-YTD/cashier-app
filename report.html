@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <title>تقرير اليوم</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<h2>📊 تقرير اليوم</h2>
+
+<div class="summary" id="reportHeader">
+  <p>🕒 تاريخ الإقفال: <strong id="closeTime"></strong></p>
+  <p>🧾 رقم اليوم: <strong id="dayNumber"></strong></p>
+</div>
+
+<div id="summary" class="summary"></div>
+
+
+<button onclick="downloadPDF()" class="btn green">
+⬇️ تحميل التقرير PDF
+</button>
+
+<br><br>
+
+
+<table border="1" width="100%">
+  <thead>
+    <tr>
+      <th>الصنف</th>
+      <th>الكمية</th>
+      <th>الإجمالي</th>
+    </tr>
+  </thead>
+  <tbody id="itemsReport"></tbody>
+</table>
+
+<br>
+
+<button onclick="goBack()">🔙 الرجوع للكاشير</button>
+<button onclick="newDay()">🔄 بدء يوم جديد</button>
+
+<script src="report.js"></script>
+</body>
+</html>

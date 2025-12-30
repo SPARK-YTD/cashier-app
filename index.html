@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <title>نظام الكاشير - خذلك بريك</title>
+
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+
+  <link rel="manifest" href="manifest.json">
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<header class="top-bar">
+  نظام الكاشير – خذلك بريك
+</header>
+
+<main class="layout">
+
+  <!-- قائمة الأصناف -->
+  <section class="menu">
+    <h3>قائمة الطلبات</h3>
+
+<div class="categories">
+  <button class="cat active" onclick="filterCategory('food', this)">🍔 طعام</button>
+  <button class="cat" onclick="filterCategory('drinks', this)">🥤 مشروبات</button>
+  <button class="cat" onclick="filterCategory('sides', this)">🍟 أطباق جانبية</button>
+</div>
+
+    <div id="items" class="items"></div>
+  </section>
+
+  <!-- الفاتورة -->
+  <section class="invoice">
+    <h3>الفاتورة</h3>
+
+    <table>
+      <thead>
+        <tr>
+          <th>الصنف</th>
+          <th>الكمية</th>
+          <th>المجموع</th>
+          <th></th>
+        </tr>
+      </thead>
+      <tbody id="cart"></tbody>
+    </table>
+
+    <div class="summary">
+      الإجمالي: <strong id="total">0.000 د.ب</strong>
+    </div>
+
+   <input
+  id="paid"
+  type="number"
+  placeholder="المبلغ المدفوع"
+  oninput="calculateChange()"
+>
+
+
+
+    <div class="summary">
+      الباقي: <strong id="change">—</strong>
+    </div>
+
+    <button class="btn green" onclick="completeOrder()">إتمام الطلب</button>
+    <button class="btn red" onclick="closeDay()">إقفال اليوم</button>
+  </section>
+
+  <!-- الطلبات الجارية -->
+  <section class="orders">
+    <h3>الطلبات الجارية</h3>
+    <div id="activeOrders"></div>
+  </section>
+
+</main>
+
+<script src="app.js"></script>
+</body>
+</html>
