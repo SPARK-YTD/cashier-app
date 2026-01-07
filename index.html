@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8" />
+  <title>نظام الكاشير</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+
+<header class="topbar">
+  نظام الكاشير
+</header>
+
+<main class="cashier-layout">
+
+  <!-- الأصناف -->
+  <section class="card products">
+    <h2>الأصناف</h2>
+
+    <div class="categories">
+      <button class="cat active" onclick="filterCategory('food', this)">🍔 طعام</button>
+      <button class="cat" onclick="filterCategory('drinks', this)">🥤 مشروبات</button>
+      <button class="cat" onclick="filterCategory('sides', this)">🍟 جانبية</button>
+    </div>
+
+    <div id="items" class="items-grid">
+      <!-- الأصناف تظهر هنا -->
+    </div>
+  </section>
+
+  <!-- الفاتورة -->
+  <section class="card invoice">
+    <h2>الفاتورة</h2>
+
+    <table class="invoice-table">
+      <thead>
+        <tr>
+          <th>الصنف</th>
+          <th>الكمية</th>
+          <th>المجموع</th>
+        </tr>
+      </thead>
+      <tbody id="cart"></tbody>
+    </table>
+
+    <div class="total-box">
+      الإجمالي:
+      <span id="total">0.000 د.ب</span>
+    </div>
+
+    <input
+      id="paid"
+      type="number"
+      placeholder="المبلغ المدفوع"
+      oninput="calculateChange()"
+    />
+
+    <div class="change-box">
+      الباقي:
+      <span id="change">—</span>
+    </div>
+
+    <div class="actions">
+      <button class="btn success" onclick="completeOrder()">إتمام الطلب</button>
+      <button class="btn danger" onclick="closeDay()">إقفال اليوم</button>
+      <button class="btn secondary" onclick="goToSettings()">إدارة الأصناف</button>
+    </div>
+  </section>
+
+  <!-- الطلبات الجارية -->
+  <section class="card orders">
+    <h2>الطلبات الجارية</h2>
+    <div id="activeOrders" class="orders-list">
+      <!-- الطلبات -->
+    </div>
+  </section>
+
+</main>
+
+<script src="app.js"></script>
+</body>
+</html>

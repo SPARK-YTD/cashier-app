@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <title>تقرير إقفال اليوم</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header class="header">
+  <h1>📊 تقرير إقفال اليوم</h1>
+  <p id="closeTime"></p>
+</header>
+
+<main class="report">
+
+  <!-- ملخص -->
+  <section class="summary-box">
+    <p>عدد الطلبات المكتملة: <strong id="ordersCount">0</strong></p>
+    <p>إجمالي المبيعات: <strong id="totalSales">0.000 د.ب</strong></p>
+  </section>
+
+  <!-- جدول الأصناف -->
+  <section>
+    <h2>تفاصيل الأصناف</h2>
+    <table>
+      <thead>
+        <tr>
+          <th>الصنف</th>
+          <th>الكمية</th>
+          <th>الإجمالي</th>
+        </tr>
+      </thead>
+      <tbody id="itemsReport"></tbody>
+    </table>
+  </section>
+
+  <!-- أزرار -->
+<section class="actions">
+  <button onclick="goBack()">⬅️ رجوع للكاشير</button>
+  <button onclick="newDay()">🔄 بدء يوم جديد</button>
+  <button onclick="downloadPDF()">🖨 تحميل PDF</button>
+</section>
+
+
+</main>
+
+<script src="report.js"></script>
+</body>
+</html>
+<button onclick="downloadPDF()">🖨 تحميل PDF</button>
